@@ -1,25 +1,21 @@
-import React from "react";
-import logo from "./images/stech.svg";
+import React,{useState,useEffect} from "react";
 import "./App.css";
+import {fetchedResult} from './api/index'
+const apiUrl = 'https://run.mocky.io/v3/e60fb51f-02b1-4ede-bd82-6c0481b5edda';
 
 function App() {
-	return (
-		<header className="App-header">
-			<img src={logo} className="App-logo" alt="Stech logo." />
-			<h1>Stech Frontend Challenge</h1>
-			<p>
-				Edit <code>src/App.js</code> and save to reload.
-			</p>
-			<a
-				className="App-link"
-				href="https://github.com/WhiteOrg/frontend-tech-test"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Full Instructions
-			</a>
-		</header>
-	);
+	const [data, setData] = useState(null)
+    useEffect(()=>{
+        fetchedResult().then(res=>setData(res))
+    },[])
+    console.log(data);
+    return (
+        <div style = {{backgroundImage: `url(${data?.backgroundImage})`,backgroundSize:'410px 375px',height : '410px',width:'auto',backgroundRepeat: 'no-repeat'}}>
+                <h1 style = {{color:'white'}}>{data?.title}</h1>
+        </div>
+    )
+	
+	
 }
 
 export default App;
