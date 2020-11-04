@@ -15,6 +15,9 @@ const Rectangle = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 10px;
+  font-family: "Barlow Condensed";
+  font-weight: 600;
+  font-size: 18px;
 `;
 const StartsAt = styled.div`
   display: flex;
@@ -25,20 +28,19 @@ const StartsAt = styled.div`
   font-size: 22px;
   font-weight: 500;
   font-style: normal;
-  line-height: 1.18;
+  line-height: 30px;
   letter-spacing: normal;
   color: #ffffff;
   margin-left: 20px;
 `;
 const Param = styled.div`
-  width: 10px;
   height: 30px;
   font-family: "Barlow Condensed";
   font-size: 22px;
   font-weight: 500;
   font-stretch: condensed;
   font-style: normal;
-  line-height: 1.18;
+  line-height: 1.4;
   letter-spacing: normal;
   color: #ffffff;
   display: flex;
