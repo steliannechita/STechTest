@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Countdown from "./countdown";
+import Countdown from "./Countdown";
 import close from "../assets/images/close.svg";
 
 const Wrapper = styled.div`
@@ -13,7 +13,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const InnerWrapper = styled.div`
+
+const InnerWrapper = styled.header`
   display: inline-flex;
   justify-content: space-between;
 `;
@@ -37,14 +38,14 @@ const CloseButton = styled.img`
   margin: 20px 24px 0px 0px;
 `;
 
-const Header = ({ data }) => (
+const Header = ({ data, timeleft }) => (
   <div>
     <Wrapper backgroundImage={data?.backgroundImage}>
       <InnerWrapper>
         <Title>{data?.title}</Title>
         <CloseButton src={close} />
       </InnerWrapper>
-      <Countdown />
+      <Countdown timeleft={timeleft} />
     </Wrapper>
   </div>
 );
