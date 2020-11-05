@@ -38,9 +38,7 @@ const Rectangle = styled.div`
 `;
 
 const Countdown = () => {
-  const countdownDate = new Date(
-    new Date().getTime() +  10 * 1000
-  ).getTime();
+  const countdownDate = new Date(new Date().getTime() + 10 * 1000).getTime();
   const [timeleft, setTimeLeft] = useState({});
 
   const calculateTimeLeft = () => {
@@ -52,7 +50,15 @@ const Countdown = () => {
         minutes: Math.floor((dif / 1000 / 60) % 60),
         seconds: Math.floor((dif / 1000) % 60),
       };
+      console.log(timeLeftFormatted);
       return timeLeftFormatted;
+    } else {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
     }
   };
   useEffect(() => {
