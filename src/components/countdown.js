@@ -3,10 +3,27 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: inline-flex;
+  > span {
+    height: 30px;
+    font-family: "Barlow Condensed";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #ffffff;
+    display: flex;
+    align-self: center;
+    &.start-at {
+      font-family: "Barlow Condensed";
+      font-size: 22px;
+      font-weight: 400;
+      color: #ffffff;
+      margin-left: 20px;
+    }
+  }
 `;
 
 const Rectangle = styled.div`
-  color: white;
+  color: #ffffff;
   display: flex;
   width: 30px;
   height: 30px;
@@ -16,40 +33,13 @@ const Rectangle = styled.div`
   align-items: center;
   margin: 0 10px;
   font-family: "Barlow Condensed";
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
-`;
-const StartsAt = styled.div`
-  display: flex;
-  align-self: center;
-  width: 66px;
-  height: 30px;
-  font-family: "Barlow Condensed";
-  font-size: 22px;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 30px;
-  letter-spacing: normal;
-  color: #ffffff;
-  margin-left: 20px;
-`;
-const Param = styled.div`
-  height: 30px;
-  font-family: "Barlow Condensed";
-  font-size: 22px;
-  font-weight: 500;
-  font-stretch: condensed;
-  font-style: normal;
-  line-height: 1.4;
-  letter-spacing: normal;
-  color: #ffffff;
-  display: flex;
-  align-self: center;
 `;
 
 const Countdown = () => {
   const countdownDate = new Date(
-    new Date().getTime() + 7 * 24 * 60 * 60 * 1000
+    new Date().getTime() +  10 * 1000
   ).getTime();
   const [timeleft, setTimeLeft] = useState({});
 
@@ -72,18 +62,17 @@ const Countdown = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(timeleft);
   return (
     <Container>
-      <StartsAt>Starts at</StartsAt>
+      <span className="start-at">Starts at</span>
       <Rectangle>{timeleft.days}</Rectangle>
-      <Param>d</Param>
+      <span>d</span>
       <Rectangle>{timeleft.hours}</Rectangle>
-      <Param>h</Param>
+      <span>h</span>
       <Rectangle>{timeleft.minutes}</Rectangle>
-      <Param>m</Param>
+      <span>m</span>
       <Rectangle>{timeleft.seconds}</Rectangle>
-      <Param>s</Param>
+      <span>s</span>
     </Container>
   );
 };

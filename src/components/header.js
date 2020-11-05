@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   margin-top: 120px;
   width: 100%;
   height: 410px;
-  object-fit: contain;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: 410px 375px;
   background-repeat: no-repeat;
