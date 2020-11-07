@@ -35,9 +35,37 @@ const Rectangle = styled.div`
   font-family: "Barlow Condensed";
   font-weight: 400;
   font-size: 18px;
+  box-sizing: border-box;
 `;
 
-const Countdown = ({ timeleft }) => {
+const Countdown = ({ countdownDate, msInADay }) => {
+  const [timeleft, setTimeLeft] = useState({});
+  const calculateTimeLeft = () => {
+    let diff = countdownDate - new Date().getTime();
+    if (diff > 0) {
+      const timeLeftFormatted = {
+        days: Math.floor(diff / msInADay),
+        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((diff / 1000 / 60) % 60),
+        seconds: Math.floor((diff / 1000) % 60),
+      };
+      return timeLeftFormatted;
+    } else {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Container>
       <span className="start-at">Starts at</span>

@@ -14,7 +14,8 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "styled-components": "^5.2.1",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "use-deep-compare-effect": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
