@@ -10,12 +10,13 @@ const msInADay = msInAnHour * 24;
 const countdownDate = new Date().getTime() + 7 * msInADay;
 const competitionStartDate = new Date(countdownDate).toUTCString();
 
-const Wrapper = styled.header`
+const HeaderWrapper = styled.header`
   margin-top: 120px;
   width: 100%;
+  max-width: 740px;
   height: 410px;
   background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-size:  375px 410px;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -65,7 +66,7 @@ const InnerWrapper = styled.div`
   ${({ secondary }) =>
     secondary &&
     css`
-      width: 150px;
+      width: 103px;
       display: flex;
       flex-direction: column;
       align-items: left;
@@ -77,22 +78,28 @@ const InnerWrapper = styled.div`
         color: #ffffff;
         margin: 3px 0px 0px 0px;
       }
-      > span {
+      span {
         font-family: "Barlow condensed";
         font-size: 14px;
         font-weight: 500;
         color: #17dfe7;
       }
-      > div {
+      div {
         display: flex;
         align-items: baseline;
-        > h1 {
+        h1 {
           margin-top: 0px;
         }
-        > img {
+        img {
           margin-right: 3px;
         }
       }
+    `}
+  ${({ secondary, player }) =>
+    secondary &&
+    player &&
+    css`
+      margin: 20px 0px 0px 32px;
     `}
   ${({ tertiary }) =>
     tertiary &&
@@ -116,7 +123,7 @@ const InnerWrapper = styled.div`
 
 const Header = ({ data }) => (
   <div>
-    <Wrapper backgroundImage={data.backgroundImage}>
+    <HeaderWrapper backgroundImage={data.backgroundImage}>
       <InnerWrapper>
         <h1>{data.title}</h1>
         <img src={CloseButton} alt="close-button" />
@@ -127,11 +134,11 @@ const Header = ({ data }) => (
           <span>PRIZE POOL</span>
           <h1>{data.prizePool}</h1>
         </InnerWrapper>
-        <InnerWrapper secondary>
+        <InnerWrapper secondary player>
           <span>PLAYER</span>
           <div>
             <img src={UserIcon} alt="user-icon" />
-            <h1>{data.players}</h1>
+            <h1>{data.players}</h1> {/*shall i use h1? */}
           </div>
         </InnerWrapper>
       </section>
@@ -140,7 +147,7 @@ const Header = ({ data }) => (
         <h5>Starts on {competitionStartDate}</h5>
       </InnerWrapper>
       <button>JOIN</button>
-    </Wrapper>
+    </HeaderWrapper>
   </div>
 );
 

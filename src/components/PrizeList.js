@@ -1,6 +1,6 @@
 import React from "react";
 import { TablePage } from "../components";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const DescriptionSpan = styled.div`
   max-width: 575px;
@@ -8,15 +8,13 @@ const DescriptionSpan = styled.div`
   span {
     font-family: "Roboto condensed";
     font-size: 16px;
-
     line-height: 1.38;
-
     color: #000000;
   }
 `;
-const PrizeList = ({ prizeList, description }) => (
+const PrizeList = ({ prizeList, description, handleRefreshClick }) => (
   <div>
-    <TablePage prizeList={prizeList} />
+    <TablePage handleRefreshClick={handleRefreshClick} prizeList={prizeList} />
     <DescriptionSpan>
       <span>{description}</span>
     </DescriptionSpan>

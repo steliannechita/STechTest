@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -40,7 +40,7 @@ const Rectangle = styled.div`
 
 const Countdown = ({ countdownDate, msInADay }) => {
   const [timeleft, setTimeLeft] = useState({});
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     let diff = countdownDate - new Date().getTime();
     if (diff > 0) {
       const timeLeftFormatted = {
@@ -58,13 +58,13 @@ const Countdown = ({ countdownDate, msInADay }) => {
         seconds: 0,
       };
     }
-  };
+  }, [countdownDate, msInADay]);
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [calculateTimeLeft]);
 
   return (
     <Container>
