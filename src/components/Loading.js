@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LoaderAndErrorWrapper } from "./styles";
+import { LoaderAndErrorWrapper } from "../styles/styles";
 
 const Loader = styled.div`
   border: 16px solid #f3f3f3;

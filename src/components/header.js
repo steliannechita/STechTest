@@ -11,10 +11,11 @@ const countdownDate = new Date().getTime() + 7 * msInADay;
 const competitionStartDate = new Date(countdownDate).toUTCString();
 
 const HeaderWrapper = styled.header`
-  margin-top: 120px;
-  width: 100%;
-  max-width: 740px;
-  height: 410px;
+  /* mobile-->margin-top: 120px; */
+  padding: 20px 20px 30px 20px; //desktop padding bottom 40px
+  @media screen and (min-width: 740px) {
+    padding: 49px 70px 40px 70px;
+  }
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,24 +24,23 @@ const HeaderWrapper = styled.header`
   flex-direction: column;
   section {
     display: flex;
-    margin: 59px 0px 0px 0px;
+    margin-top: 80px;
   }
   button {
-    width: auto;
-    max-width: 334px;
-    height: 42px;
-    border-radius: 1px;
+    min-height: 44px;
     background-color: #f9cb11;
-    margin: 0 20px;
     font-family: "Barlow Condensed";
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1.88px;
     color: #0a0052;
-    margin-bottom: 40px;
+    border-radius: 3px;
     &:hover {
-      border: 3px solid blueviolet;
+      border: 2px solid goldenrod;
       cursor: pointer;
+    }
+    @media screen and (min-width: 740px) {
+      max-width: 300px;
     }
   }
 `;
@@ -48,8 +48,7 @@ const HeaderWrapper = styled.header`
 const InnerWrapper = styled.div`
   display: inline-flex;
   justify-content: space-between;
-  margin: 20px 0px 0px 20px;
-
+  margin-bottom: 20px;
   h1 {
     font-size: 34px;
     font-weight: 400;
@@ -58,12 +57,14 @@ const InnerWrapper = styled.div`
     letter-spacing: -0.77px;
     color: #ffffff;
     margin-top: 0px;
+    @media screen and (min-width: 740px) {
+      font-size: 48px;
+      font-weight: 600;
+    }
   }
   > img {
     width: 34px;
     height: 34px;
-    object-fit: contain;
-    margin: 0px 24px 0px 0px;
   }
   ${({ secondary }) =>
     secondary &&
@@ -73,6 +74,7 @@ const InnerWrapper = styled.div`
       flex-direction: column;
       align-items: left;
       justify-content: flex-start;
+      margin-bottom: 0px;
       h1 {
         font-family: "Barlow condensed";
         font-size: 26px;
@@ -80,7 +82,7 @@ const InnerWrapper = styled.div`
         color: #ffffff;
         margin: 3px 0px 0px 0px;
       }
-      span {
+      p {
         font-family: "Barlow condensed";
         font-size: 14px;
         font-weight: 500;
@@ -101,7 +103,7 @@ const InnerWrapper = styled.div`
     secondary &&
     player &&
     css`
-      margin: 20px 0px 0px 32px;
+      margin-left: 32px;
       div {
         margin-top: 3px;
       }
@@ -111,16 +113,17 @@ const InnerWrapper = styled.div`
     css`
       justify-content: flex-start;
       align-items: center;
-      margin-top: 0px;
+      margin: 22px 0px 31px 0px;
       img {
         width: 18px;
         height: 20px;
         margin-right: 12px;
       }
-      h5 {
+      p {
         font-family: "Barlow condensed";
         font-size: 14px;
         font-weight: 500;
+        letter-spacing: 0.4px;
         color: #ffffff;
       }
     `}
@@ -135,11 +138,11 @@ const Header = ({ data }) => (
     <Countdown countdownDate={countdownDate} msInADay={msInADay} />
     <section>
       <InnerWrapper secondary>
-        <span>PRIZE POOL</span>
+        <p>PRIZE POOL</p>
         <h1>{data.prizePool}</h1>
       </InnerWrapper>
       <InnerWrapper secondary player>
-        <span>PLAYER</span>
+        <p>PLAYER</p>
         <div>
           <img src={UserIcon} alt="user-icon" />
           <h1>{data.players}</h1> {/*shall i use h1? */}
@@ -148,7 +151,7 @@ const Header = ({ data }) => (
     </section>
     <InnerWrapper tertiary>
       <img src={CalendarIcon} alt="close-button" />
-      <h5>Starts on {competitionStartDate}</h5>
+      <p>Starts on {competitionStartDate}</p>
     </InnerWrapper>
     <button>JOIN</button>
   </HeaderWrapper>

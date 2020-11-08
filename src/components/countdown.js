@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: inline-flex;
-  > span {
+  p,
+  span {
     height: 30px;
     font-family: "Barlow Condensed";
     font-size: 22px;
@@ -12,20 +13,13 @@ const Container = styled.div`
     color: #ffffff;
     display: flex;
     align-self: center;
-    &.start-at {
-      font-family: "Barlow Condensed";
-      font-size: 22px;
-      font-weight: 400;
-      color: #ffffff;
-      margin-left: 20px;
-    }
   }
 `;
 
 const Rectangle = styled.div`
   color: #ffffff;
   display: flex;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 6px;
   border: solid 2px #ffffff;
@@ -68,7 +62,7 @@ const Countdown = ({ countdownDate, msInADay }) => {
 
   return (
     <Container>
-      <span className="start-at">Starts at</span>
+      <p>Ends</p>
       <Rectangle>{timeleft.days}</Rectangle>
       <span>d</span>
       <Rectangle>{timeleft.hours}</Rectangle>

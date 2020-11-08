@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import RefreshButton from "../assets/images/refresh.svg";
-import { SectionHeader } from "./styles";
+import { SectionHeader } from "../styles/styles";
 
-const MainContainer = styled.div`
-  max-width: 600px;
-`;
 const PrizeListHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
-  margin: 10px 0px;
 
   img {
     &:hover {
@@ -73,9 +68,12 @@ const PrizeListHeader = styled.header`
 const TabbleWrapper = styled.div`
   font-family: "Barlow condensed";
   font-weight: 600;
-  max-height: 198px;
+  max-height: 178px;
   overflow-y: scroll;
-  margin-right: 20px;
+  padding: 15px 0px;
+  border: 3px solid #ebebf9;
+  border-right: none;
+  border-left: none;
   ::-webkit-scrollbar {
     width: 4px;
   }
@@ -91,20 +89,13 @@ const TabbleWrapper = styled.div`
   }
 
   table {
-    padding: 0px 20px;
     width: 100%;
-
+    padding-right: 20px;
     tbody {
-      hr {
-        color: white;
-      }
-      width: 100%;
       tr {
-        padding-left: 5px;
-        width: 100%;
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid wheat;
         padding: 5px 0px;
         td {
           display: flex;
@@ -121,7 +112,7 @@ const TabbleWrapper = styled.div`
 
 const TablePage = ({ prizeList, handleRefreshClick }) => {
   return (
-    <MainContainer>
+    <div>
       <PrizeListHeader>
         <SectionHeader>Prize List</SectionHeader>
         <img
@@ -147,7 +138,7 @@ const TablePage = ({ prizeList, handleRefreshClick }) => {
           </tbody>
         </table>
       </TabbleWrapper>
-    </MainContainer>
+    </div>
   );
 };
 

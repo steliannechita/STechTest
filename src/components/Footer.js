@@ -7,8 +7,16 @@ const FooterWrapper = styled.div`
   height: 150px;
   background-image: linear-gradient(to bottom, #158dd4, #56169b);
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
+  p {
+    margin-bottom:10px;
+    font-family: "Barlow condensed";
+    font-size: 16px;
+    font-weight: 600;
+    color: #f9cb11;
+  }
   img {
     height: 46px;
     width: 46px;
@@ -23,8 +31,11 @@ const FooterWrapper = styled.div`
 
 const Footer = () => (
   <FooterWrapper>
-    <img src={TwitterIcon} alt="twitter" />
-    <img src={FacebookIcon} alt="facebook" />
+    <p>Share this Tournament</p>
+    <div>
+      <img src={TwitterIcon} alt="twitter" />
+      <img src={FacebookIcon} alt="facebook" />
+    </div>
   </FooterWrapper>
 );
 

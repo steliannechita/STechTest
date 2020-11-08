@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionHeader, Wrapper } from "./styles";
+import { SectionHeader, Wrapper } from "../styles/styles";
 
 const GamesWrapper = styled.div`
   width: 100%;
-  max-width: 600px;
   display: flex;
   flex-wrap: wrap;
   max-height: 372px;
@@ -12,8 +11,12 @@ const GamesWrapper = styled.div`
   justify-content: space-between;
 
   img {
-    width: 160px;
-    height: 110px;
+    @media screen and (min-width: 740px) {
+      max-width: 190px;
+      height: 130px;
+    }
+    max-width: 160px;
+    height: auto;
     margin-bottom: 14px;
     &:hover {
       box-sizing: border-box;

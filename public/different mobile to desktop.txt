@@ -1,0 +1,12 @@
+1. Play'n Go header title -->desktop {font-size: 48px; font-weight: 600; line-height: 0.54;}
+			     --mobile{font-size: 34px; font-weight: 500;  line-height: 1.03;}	
+
+2.JOIN button -> media query -->desktop {maxWidth:300px;}
+			     --mobile{maxWidth:100%;}	
+
+3.SectionHeader fontSize - desktop:28px; mobile:24px;
+
+4.Games Images - > desktop :{height:130px, width:190px}	
+		- > mobile:{height:110px, width:160px}	
+
+5.Padding left/right

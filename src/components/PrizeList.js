@@ -1,10 +1,12 @@
 import React from "react";
 import { TablePage } from "../components";
 import styled from "styled-components";
+import {  Wrapper } from "../styles/styles";
+
+
 
 const DescriptionSpan = styled.div`
-  max-width: 575px;
-  padding: 20px;
+  margin-top: 30px;
   span {
     font-family: "Roboto condensed";
     font-size: 16px;
@@ -13,12 +15,12 @@ const DescriptionSpan = styled.div`
   }
 `;
 const PrizeList = ({ prizeList, description, handleRefreshClick }) => (
-  <div>
+  <Wrapper>
     <TablePage handleRefreshClick={handleRefreshClick} prizeList={prizeList} />
     <DescriptionSpan>
       <span>{description}</span>
     </DescriptionSpan>
-  </div>
+  </Wrapper>
 );
 
 export default PrizeList;
