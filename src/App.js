@@ -28,7 +28,6 @@ function App() {
     setData(null);
     setError("Fetch failed - please refresh your browser");
   };
-
   useEffect(() => {
     executeFetch(onFetchSuccess, onFetchFailure);
   }, [prizeListRefresh]);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const CountdownContainer = styled.div`
   display: inline-flex;
   p,
   span {
@@ -61,8 +61,8 @@ const Countdown = ({ countdownDate, msInADay }) => {
   }, [calculateTimeLeft]);
 
   return (
-    <Container>
-      <p>Ends</p>
+    <CountdownContainer>
+      <p>Starts</p>
       <Rectangle>{timeleft.days}</Rectangle>
       <span>d</span>
       <Rectangle>{timeleft.hours}</Rectangle>
@@ -71,7 +71,7 @@ const Countdown = ({ countdownDate, msInADay }) => {
       <span>m</span>
       <Rectangle>{timeleft.seconds}</Rectangle>
       <span>s</span>
-    </Container>
+    </CountdownContainer>
   );
 };
 
