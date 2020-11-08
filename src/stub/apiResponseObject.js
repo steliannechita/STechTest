@@ -1,3 +1,5 @@
+// Object created for development, when API call was failing
+
 export const apiResponse = {
   title: "Play'n GO Tournament",
   description:

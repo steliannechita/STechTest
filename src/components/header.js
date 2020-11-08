@@ -11,8 +11,7 @@ const countdownDate = new Date().getTime() + 7 * msInADay;
 const competitionStartDate = new Date(countdownDate).toUTCString();
 
 const HeaderWrapper = styled.header`
-  /* mobile-->margin-top: 120px; */
-  padding: 20px 20px 30px 20px; //desktop padding bottom 40px
+  padding: 20px 20px 30px 20px; 
   @media screen and (min-width: 740px) {
     padding: 49px 70px 40px 70px;
   }

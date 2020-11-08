@@ -11,10 +11,6 @@ const GamesWrapper = styled.div`
   justify-content: space-between;
 
   img {
-    @media screen and (min-width: 740px) {
-      max-width: 190px;
-      height: 130px;
-    }
     max-width: 160px;
     height: auto;
     margin-bottom: 14px;
@@ -23,6 +19,19 @@ const GamesWrapper = styled.div`
       border: 3px solid blueviolet;
       border-radius: 3px;
       cursor: pointer;
+    }
+
+    @media only screen and (min-width: 280px) {
+      max-width: 135px;
+    }
+    @media only screen and (min-width: 361px) {
+      max-width: 160px;
+    }
+    @media only screen and (min-width: 576px) {
+      max-width: 175px;
+    }
+    @media screen and (min-width: 740px) {
+      max-width: 190px;
     }
   }
 `;

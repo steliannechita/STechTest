@@ -15,7 +15,7 @@ const AppContainer = styled.div`
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [prizeListRefresh, setPrizeListRefresh] = useState(false);
+  const [prizeListRefresh, setPrizeListRefresh] = useState(false); //piece of state/setter which we use for calling the API when user click refresh
 
   const handleRefreshClick = () => {
     setPrizeListRefresh((prev) => !prev);
