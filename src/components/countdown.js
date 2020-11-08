@@ -1,36 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import styled from "styled-components";
-
-const CountdownContainer = styled.div`
-  display: inline-flex;
-  p,
-  span {
-    height: 30px;
-    font-family: "Barlow Condensed";
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #ffffff;
-    display: flex;
-    align-self: center;
-  }
-`;
-
-const Rectangle = styled.div`
-  color: #ffffff;
-  display: flex;
-  min-width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  border: solid 2px #ffffff;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-  font-family: "Barlow Condensed";
-  font-weight: 400;
-  font-size: 18px;
-  box-sizing: border-box;
-`;
+import { Rectangle, CountdownContainer } from "../styles/header";
 
 const Countdown = ({ countdownDate, msInADay }) => {
   const [timeleft, setTimeLeft] = useState({});

@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Re-used elements
+// Re-used elements styles
 export const SectionHeader = styled.h1`
   height: 26px;
   font-size: 24px;
@@ -69,5 +69,23 @@ export const LoaderAndErrorWrapper = styled.div`
   > img {
     height: 22px;
     margin: 5px;
+  }
+`;
+
+//Loader style
+export const Loader = styled.div`
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #091870;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
