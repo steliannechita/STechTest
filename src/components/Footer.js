@@ -22,8 +22,8 @@ const FooterWrapper = styled.div`
 
 const Footer = () => (
   <FooterWrapper>
-    <img src={TwitterIcon} />
-    <img src={FacebookIcon} />
+    <img src={TwitterIcon} alt='twitter'/>
+    <img src={FacebookIcon} alt='facebook'/>
   </FooterWrapper>
 );
 

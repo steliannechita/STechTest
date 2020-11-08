@@ -18,6 +18,7 @@ const HeaderWrapper = styled.header`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   section {
@@ -38,7 +39,7 @@ const HeaderWrapper = styled.header`
     color: #0a0052;
     margin-bottom: 40px;
     &:hover {
-      border: 1px solid blueviolet;
+      border: 3px solid blueviolet;
     }
   }
 `;
@@ -48,7 +49,7 @@ const InnerWrapper = styled.div`
   justify-content: space-between;
   margin: 20px 0px 0px 20px;
 
-  > h1 {
+  h1 {
     font-size: 34px;
     font-weight: 400;
     font-family: "Barlow Condensed";
@@ -100,6 +101,9 @@ const InnerWrapper = styled.div`
     player &&
     css`
       margin: 20px 0px 0px 32px;
+      div {
+        margin-top: 3px;
+      }
     `}
   ${({ tertiary }) =>
     tertiary &&

@@ -7,3 +7,4 @@ Hi 👋 and welcome to the frontend tech challenge. We'd like you to create a si
 - Add propTypes and defaultProps
 - Add a modal for when the API call is failing
 - Refactor the code using Typescript
+- Use CSS variables for colors/margins/padding etc
