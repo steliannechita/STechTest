@@ -40,6 +40,7 @@ const HeaderWrapper = styled.header`
     margin-bottom: 40px;
     &:hover {
       border: 3px solid blueviolet;
+      cursor: pointer;
     }
   }
 `;
@@ -126,33 +127,31 @@ const InnerWrapper = styled.div`
 `;
 
 const Header = ({ data }) => (
-  <div>
-    <HeaderWrapper backgroundImage={data.backgroundImage}>
-      <InnerWrapper>
-        <h1>{data.title}</h1>
-        <img src={CloseButton} alt="close-button" />
+  <HeaderWrapper backgroundImage={data.backgroundImage}>
+    <InnerWrapper>
+      <h1>{data.title}</h1>
+      <img src={CloseButton} alt="close-button" />
+    </InnerWrapper>
+    <Countdown countdownDate={countdownDate} msInADay={msInADay} />
+    <section>
+      <InnerWrapper secondary>
+        <span>PRIZE POOL</span>
+        <h1>{data.prizePool}</h1>
       </InnerWrapper>
-      <Countdown countdownDate={countdownDate} msInADay={msInADay} />
-      <section>
-        <InnerWrapper secondary>
-          <span>PRIZE POOL</span>
-          <h1>{data.prizePool}</h1>
-        </InnerWrapper>
-        <InnerWrapper secondary player>
-          <span>PLAYER</span>
-          <div>
-            <img src={UserIcon} alt="user-icon" />
-            <h1>{data.players}</h1> {/*shall i use h1? */}
-          </div>
-        </InnerWrapper>
-      </section>
-      <InnerWrapper tertiary>
-        <img src={CalendarIcon} alt="close-button" />
-        <h5>Starts on {competitionStartDate}</h5>
+      <InnerWrapper secondary player>
+        <span>PLAYER</span>
+        <div>
+          <img src={UserIcon} alt="user-icon" />
+          <h1>{data.players}</h1> {/*shall i use h1? */}
+        </div>
       </InnerWrapper>
-      <button>JOIN</button>
-    </HeaderWrapper>
-  </div>
+    </section>
+    <InnerWrapper tertiary>
+      <img src={CalendarIcon} alt="close-button" />
+      <h5>Starts on {competitionStartDate}</h5>
+    </InnerWrapper>
+    <button>JOIN</button>
+  </HeaderWrapper>
 );
 
 export default Header;

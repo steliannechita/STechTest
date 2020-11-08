@@ -19,6 +19,7 @@ const GamesWrapper = styled.div`
       box-sizing: border-box;
       border: 3px solid blueviolet;
       border-radius: 3px;
+      cursor: pointer;
     }
   }
 `;

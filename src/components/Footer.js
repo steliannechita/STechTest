@@ -16,14 +16,15 @@ const FooterWrapper = styled.div`
     &:hover {
       transition: 0.9s;
       transform: rotateZ(360deg);
+      cursor: pointer;
     }
   }
 `;
 
 const Footer = () => (
   <FooterWrapper>
-    <img src={TwitterIcon} alt='twitter'/>
-    <img src={FacebookIcon} alt='facebook'/>
+    <img src={TwitterIcon} alt="twitter" />
+    <img src={FacebookIcon} alt="facebook" />
   </FooterWrapper>
 );
 

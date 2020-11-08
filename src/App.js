@@ -8,7 +8,6 @@ function App() {
   const [error, setError] = useState(null);
   const [prizeListRefresh, setPrizeListRefresh] = useState(false);
 
-  console.log(data);
   const handleRefreshClick = () => {
     setPrizeListRefresh((prev) => !prev);
   };
@@ -25,8 +24,12 @@ function App() {
     executeFetch(onFetchSuccess, onFetchFailure);
   }, [prizeListRefresh]);
 
-  if (!data && !error) return <Loading />;
-  if (error) return <ErrorMsg text={error} />;
+  if (!data && !error) {
+    return <Loading />;
+  }
+  if (error) {
+    return <ErrorMsg text={error} />;
+  }
   return (
     <>
       <Header data={data} />
