@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { number } from "prop-types";
 import { Rectangle, CountdownContainer } from "../styles/header";
 
 const Countdown = ({ countdownDate, msInADay }) => {
@@ -42,6 +43,11 @@ const Countdown = ({ countdownDate, msInADay }) => {
       <span>s</span>
     </CountdownContainer>
   );
+};
+
+Countdown.propTypes = {
+  countdownDate: number,
+  msInADay: number,
 };
 
 export default Countdown;

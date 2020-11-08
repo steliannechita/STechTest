@@ -1,6 +1,7 @@
 import React from "react";
+import { arrayOf, func, exact, string } from "prop-types";
 import RefreshButton from "../assets/images/refresh.svg";
-import {PrizeListHeader,TabbleWrapper} from '../styles/mainwrap/prizeList'
+import { PrizeListHeader, TabbleWrapper } from "../styles/mainwrap/prizeList";
 import { SectionHeader } from "../styles/styles";
 
 const TablePage = ({ prizeList, handleRefreshClick }) => {
@@ -12,6 +13,7 @@ const TablePage = ({ prizeList, handleRefreshClick }) => {
           onClick={handleRefreshClick}
           src={RefreshButton}
           alt="refresh button"
+          role="button"
         />
       </PrizeListHeader>
       <TabbleWrapper>
@@ -33,6 +35,16 @@ const TablePage = ({ prizeList, handleRefreshClick }) => {
       </TabbleWrapper>
     </div>
   );
+};
+
+TablePage.propTypes = {
+  prizeList: arrayOf(exact({ title: string, total: string })),
+  handleRefreshClick: func,
+};
+
+TablePage.defaultProps = {
+  prizeList: [],
+  handleRefreshClick: (r) => r,
 };
 
 export default TablePage;

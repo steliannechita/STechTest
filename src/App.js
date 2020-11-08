@@ -15,22 +15,20 @@ const AppContainer = styled.div`
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [prizeListRefresh, setPrizeListRefresh] = useState(false); //piece of state/setter which we use for calling the API when user click refresh
-
-  const handleRefreshClick = () => {
-    setPrizeListRefresh((prev) => !prev);
-  };
   const onFetchSuccess = (payload) => {
     setData(payload);
     setError(null);
   };
   const onFetchFailure = () => {
     setData(null);
-    setError("Fetch failed - please refresh your browser");
+    setError(
+      "Fetch failed - please refresh your browser or check your internet connection"
+    );
   };
-  useEffect(() => {
+  const fetchData = () => {
     executeFetch(onFetchSuccess, onFetchFailure);
-  }, [prizeListRefresh]);
+  };
+  useEffect(fetchData, []);
 
   if (!data && !error) {
     return <Loading />;
@@ -42,7 +40,7 @@ function App() {
     <>
       <AppContainer>
         <Header data={data} />
-        <MainWrap data={data} handleRefreshClick={handleRefreshClick} />
+        <MainWrap data={data} handleRefreshClick={fetchData} />
         <Footer />
       </AppContainer>
       <GlobalStyle />

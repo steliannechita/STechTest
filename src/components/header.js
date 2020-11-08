@@ -1,9 +1,10 @@
 import React from "react";
-import { HeaderWrapper, InnerWrapper } from "../styles/header";
-import Countdown from "./Countdown";
+import { object } from "prop-types";
 import CloseButton from "../assets/images/close.svg";
 import UserIcon from "../assets/images/user.svg";
 import CalendarIcon from "../assets/images/calendar.svg";
+import { HeaderWrapper, InnerWrapper } from "../styles/header";
+import { Countdown } from ".";
 
 const msInADay = 1000 * 60 * 60 * 24;
 const countdownDate = new Date().getTime() + 7 * msInADay;
@@ -36,5 +37,13 @@ const Header = ({ data }) => (
     <button>JOIN</button>
   </HeaderWrapper>
 );
+
+Header.propTypes = {
+  data: object,
+};
+
+Header.defaultProps = {
+  data: {},
+};
 
 export default Header;
