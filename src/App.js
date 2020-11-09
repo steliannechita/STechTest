@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { executeFetch } from "./api/index";
 import { Header, Footer, Loading, ErrorMsg, MainWrap } from "./components";
 import { errorMessage } from "./constants/constants";
