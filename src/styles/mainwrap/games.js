@@ -9,7 +9,7 @@ export const GamesWrapper = styled.div`
   justify-content: space-between;
 
   img {
-    max-width: 160px;
+    max-width: 43vmin;
     height: auto;
     margin-bottom: 14px;
     &:hover {
@@ -19,7 +19,7 @@ export const GamesWrapper = styled.div`
       cursor: pointer;
     }
 
-    @media only screen and (min-width: 280px) {
+    /* @media only screen and (min-width: 280px) {
       max-width: 135px;
     }
     @media only screen and (min-width: 361px) {
@@ -27,7 +27,7 @@ export const GamesWrapper = styled.div`
     }
     @media only screen and (min-width: 576px) {
       max-width: 175px;
-    }
+    } */
     @media screen and (min-width: 740px) {
       max-width: 190px;
     }

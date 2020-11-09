@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { executeFetch } from "./api/index";
 import { Header, Footer, Loading, ErrorMsg, MainWrap } from "./components";
+import { errorMessage } from "./constants/constants";
 import { GlobalStyle } from "./styles/styles";
 // import { apiResponse } from "./stub/apiResponseObject";
 
@@ -21,9 +22,7 @@ function App() {
   };
   const onFetchFailure = () => {
     setData(null);
-    setError(
-      "Fetch failed - please refresh your browser or check your internet connection"
-    );
+    setError(errorMessage);
   };
   const fetchData = () => {
     executeFetch(onFetchSuccess, onFetchFailure);

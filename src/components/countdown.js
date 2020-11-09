@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { number } from "prop-types";
 import { Rectangle, CountdownContainer } from "../styles/header";
+import { countdownDate, msInADay } from "../constants/constants";
 
-const Countdown = ({ countdownDate, msInADay }) => {
+const Countdown = () => {
   const [timeleft, setTimeLeft] = useState({});
+  const { days, hours, minutes, seconds } = timeleft;
+
   const calculateTimeLeft = useCallback(() => {
     let diff = countdownDate - new Date().getTime();
     if (diff > 0) {
@@ -22,7 +25,8 @@ const Countdown = ({ countdownDate, msInADay }) => {
         seconds: 0,
       };
     }
-  }, [countdownDate, msInADay]);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
@@ -33,21 +37,16 @@ const Countdown = ({ countdownDate, msInADay }) => {
   return (
     <CountdownContainer>
       <p>Starts</p>
-      <Rectangle>{timeleft.days}</Rectangle>
+      <Rectangle>{days}</Rectangle>
       <span>d</span>
-      <Rectangle>{timeleft.hours}</Rectangle>
+      <Rectangle>{hours}</Rectangle>
       <span>h</span>
-      <Rectangle>{timeleft.minutes}</Rectangle>
+      <Rectangle>{minutes}</Rectangle>
       <span>m</span>
-      <Rectangle>{timeleft.seconds}</Rectangle>
+      <Rectangle>{seconds}</Rectangle>
       <span>s</span>
     </CountdownContainer>
   );
-};
-
-Countdown.propTypes = {
-  countdownDate: number,
-  msInADay: number,
 };
 
 export default Countdown;

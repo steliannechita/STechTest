@@ -3,12 +3,9 @@ import { object } from "prop-types";
 import CloseButton from "../assets/images/close.svg";
 import UserIcon from "../assets/images/user.svg";
 import CalendarIcon from "../assets/images/calendar.svg";
+import { competitionStartDate } from "../constants/constants";
 import { HeaderWrapper, InnerWrapper } from "../styles/header";
 import { Countdown } from ".";
-
-const msInADay = 1000 * 60 * 60 * 24;
-const countdownDate = new Date().getTime() + 7 * msInADay;
-const competitionStartDate = new Date(countdownDate).toUTCString();
 
 const Header = ({ data }) => (
   <HeaderWrapper backgroundImage={data.backgroundImage}>
@@ -16,7 +13,7 @@ const Header = ({ data }) => (
       <h1>{data.title}</h1>
       <img src={CloseButton} alt="close-button" />
     </InnerWrapper>
-    <Countdown countdownDate={countdownDate} msInADay={msInADay} />
+    <Countdown />
     <section>
       <InnerWrapper secondary>
         <p>PRIZE POOL</p>
