@@ -6,14 +6,13 @@ export const GamesWrapper = styled.div`
   flex-wrap: wrap;
   overflow-y: overlay;
   justify-content: space-between;
-
   img {
     max-width: 42vw;
     margin-bottom: 14px;
+    border-radius: 3px;
     &:hover {
       box-sizing: border-box;
       opacity: 70%;
-      border-radius: 3px;
       cursor: pointer;
     }
     @media screen and (min-width: 740px) {
