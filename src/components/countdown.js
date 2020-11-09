@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { number } from "prop-types";
 import { Rectangle, CountdownContainer } from "../styles/header";
 import { countdownDate, msInADay } from "../constants/constants";
 

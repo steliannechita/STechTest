@@ -1,4 +1,4 @@
-import {apiUrl} from '../constants/constants'
+import { apiUrl } from "../constants/constants";
 
 export const executeFetch = async (resolve, reject) => {
   return await fetch(apiUrl)

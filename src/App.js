@@ -3,30 +3,26 @@ import styled from "styled-components";
 import { executeFetch } from "./api/index";
 import { Header, Footer, Loading, ErrorMsg, MainWrap } from "./components";
 import { errorMessage } from "./constants/constants";
-import { GlobalStyle } from "./styles/styles";
-// import { apiResponse } from "./stub/apiResponseObject";
+import { GlobalStyle, AppContainer } from "./styles/styles";
 
-const AppContainer = styled.div`
-  max-width: 740px;
-  min-width: 315px;
-  @media screen and (min-width: 740px) {
-    margin: 50px auto;
-  }
-`;
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+
   const onFetchSuccess = (payload) => {
     setData(payload);
     setError(null);
   };
+
   const onFetchFailure = () => {
     setData(null);
     setError(errorMessage);
   };
+
   const fetchData = () => {
     executeFetch(onFetchSuccess, onFetchFailure);
   };
+
   useEffect(fetchData, []);
 
   if (!data && !error) {

@@ -64,7 +64,7 @@ export const LoaderAndErrorWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${window.visualViewport.height}px;
+  height: ${window.visualViewport?.height}px;
 
   > img {
     height: 22px;
@@ -87,5 +87,14 @@ export const Loader = styled.div`
     100% {
       transform: rotate(360deg);
     }
+  }
+`;
+
+//App styles
+export const AppContainer = styled.div`
+  max-width: 740px;
+  min-width: 315px;
+  @media screen and (min-width: 740px) {
+    margin: 50px auto;
   }
 `;
