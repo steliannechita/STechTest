@@ -80,7 +80,6 @@ export const TabbleWrapper = styled.div`
     background: #f1f1f1;
   }
   ::-webkit-scrollbar-thumb {
-    background: yellow;
     background-color: #f9cb11;
   }
   ::-webkit-scrollbar-thumb:hover {
