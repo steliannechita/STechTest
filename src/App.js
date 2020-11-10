@@ -23,7 +23,6 @@ function App() {
   };
 
   useEffect(fetchData, []);
-
   if (!data && !error) {
     return <Loading />;
   }

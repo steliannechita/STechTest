@@ -1,5 +1,5 @@
 import React from "react";
-import { func, object } from "prop-types";
+import { func, shape, string, arrayOf, exact } from "prop-types";
 import { PrizeList, Games, TermsAndConditions } from "../components";
 
 const MainWrap = ({ data, handleRefreshClick }) => {
@@ -18,7 +18,11 @@ const MainWrap = ({ data, handleRefreshClick }) => {
 };
 
 MainWrap.propTypes = {
-  data: object,
+  data: shape({
+    description: string,
+    prizeList: arrayOf(exact({ title: string, total: string })),
+    games: arrayOf(exact({ title: string, src: string })),
+  }),
   handleRefreshClick: func,
 };
 
